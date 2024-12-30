@@ -1,0 +1,591 @@
+<!doctype html>
+<html>
+<head>
+<Meta http-equiv=Content-Type Content=text/html; Charset=UTF-8>
+<Meta http-equiv=Content-Language Content=zh-CN>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<title>
+flex lalyout
+</title>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .flex {
+            width: 500px;
+            margin: 30px auto;
+            background: #cccccc;
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            background: #333;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .flex1 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex2 {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .flex3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex4 {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .flex5 {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .flex6 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flex7 {
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+
+        .flex8 {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .flex9 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .flex10 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .flex11 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex12 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .flex13 {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .flex14 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .flex15 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        .flex16 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .flex17 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: baseline;
+        }
+
+        .flex18 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+
+        .flex19 {
+            display: flex;
+            height: 240px;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .flex20 {
+            display: flex;
+            height: 240px;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+
+        .flex21 {
+            height: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .flex22 {
+            height: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .flex23 {
+            height: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+
+        .flex24 {
+            height: 240px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: stretch;
+        }
+
+        .flex25 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex25>.box5 {
+            order: -5;
+        }
+
+        .flex26 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex26>.box3 {
+            flex-grow: 3;
+        }
+
+        .flex27 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex27>.box {
+            flex: 1;
+        }
+
+        .flex27>.box3 {
+            flex: 0;
+        }
+
+        .flex28 {
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex28>.box3{
+            align-items: auto;
+        }
+        .flex29 {
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex29>.box3{
+            align-self: flex-start;
+        }
+        .flex30 {
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex30>.box3{
+            align-self: flex-end;
+        }
+        .flex31 {
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex31>.box3{
+            align-self: center;
+        }
+        .flex32 {
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .flex32>.box3{
+            line-height: 50px;
+            align-self: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>1.flex-direction: row</h2>
+    <div class="flex flex1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>2.flex-direction: row-reverse</h2>
+    <div class="flex flex2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>3.flex-direction: column</h2>
+    <div class="flex flex3">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>4.flex-direction: column-reverse</h2>
+    <div class="flex flex4">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>5.flex-wrap: nowrap</h2>
+    <div class="flex flex5">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+    </div>
+    <h2>6.flex-wrap: wrap</h2>
+    <div class="flex flex6">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+    </div>
+    <h2>7.flex-wrap: wrap-reverse</h2>
+    <div class="flex flex7">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+        <div class="box">5</div>
+    </div>
+    <h2>8.justify-content: flex-start</h2>
+    <div class="flex flex8">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>9.justify-content: flex-end</h2>
+    <div class="flex flex9">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>10.justify-content: center</h2>
+    <div class="flex flex10">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>11.justify-content: space-between</h2>
+    <div class="flex flex11">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>12.justify-content: space-around</h2>
+    <div class="flex flex12">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>13.justify-content: space-evenly</h2>
+    <div class="flex flex13">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <h2>14.align-items: flex-start</h2>
+    <div class="flex flex14">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+    </div>
+    <h2>15.align-items: flex-end</h2>
+    <div class="flex flex15">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+    </div>
+    <h2>16.align-items: center</h2>
+    <div class="flex flex16">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+    </div>
+    <h2>17.align-items: baseline</h2>
+    <div class="flex flex17">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+    </div>
+    <h2>18.align-items: stretch</h2>
+    <div class="flex flex18">
+        <div class="box" style="height: auto">1</div>
+        <div class="box" style="height: auto">2</div>
+        <div class="box" style="height: auto">3</div>
+        <div class="box" style="height: auto">4</div>
+        <div class="box" style="height: auto">5</div>
+    </div>
+    <h2>19.align-content: flex-start</h2>
+    <div class="flex flex19">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>20.align-content: flex-end</h2>
+    <div class="flex flex20">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>21.align-content: center</h2>
+    <div class="flex flex21">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>22.align-content: space-between</h2>
+    <div class="flex flex22">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>23.align-content: space-around</h2>
+    <div class="flex flex23">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>24.align-content: stretch</h2>
+    <div class="flex flex24">
+        <div class="box" style="height: 25px">1</div>
+        <div class="box" style="height: 40px">2</div>
+        <div class="box" style="height: 50px">3</div>
+        <div class="box" style="height: 60px">4</div>
+        <div class="box" style="height: 55px">5</div>
+        <div class="box" style="height: 25px">6</div>
+        <div class="box" style="height: 40px">7</div>
+        <div class="box" style="height: 50px">8</div>
+        <div class="box" style="height: 60px">9</div>
+        <div class="box" style="height: 55px">10</div>
+        <div class="box" style="height: 25px">11</div>
+        <div class="box" style="height: 40px">12</div>
+        <div class="box" style="height: 50px">13</div>
+        <div class="box" style="height: 60px">14</div>
+        <div class="box" style="height: 55px">15</div>
+    </div>
+    <h2>1. order (项目5的order值为 -1)</h2>
+    <div class="flex flex25">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    <h2>2. flex-grow (项目3的值为3)</h2>
+    <div class="flex flex26">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    <h2>3. flex-shrink (项目3的值为0)</h2>
+    <div class="flex flex27">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    <h2>4. align-self: auto</h2>
+    <div class="flex flex28">
+        <div class="box box1" style="height: 25px">1</div>
+        <div class="box box2" style="height: 40px">2</div>
+        <div class="box box3" style="height: 50px">3</div>
+        <div class="box box4" style="height: 60px">4</div>
+        <div class="box box5" style="height: 55px">5</div>
+    </div>
+    <h2>5. align-self: flex-start</h2>
+    <div class="flex flex29">
+        <div class="box box1" style="height: 25px">1</div>
+        <div class="box box2" style="height: 40px">2</div>
+        <div class="box box3" style="height: 50px">3</div>
+        <div class="box box4" style="height: 60px">4</div>
+        <div class="box box5" style="height: 55px">5</div>
+    </div>
+    <h2>6. align-self: flex-end</h2>
+    <div class="flex flex30">
+        <div class="box box1" style="height: 25px">1</div>
+        <div class="box box2" style="height: 40px">2</div>
+        <div class="box box3" style="height: 50px">3</div>
+        <div class="box box4" style="height: 60px">4</div>
+        <div class="box box5" style="height: 55px">5</div>
+    </div>
+    <h2>7. align-self: center</h2>
+    <div class="flex flex31">
+        <div class="box box1" style="height: 25px">1</div>
+        <div class="box box2" style="height: 40px">2</div>
+        <div class="box box3" style="height: 50px">3</div>
+        <div class="box box4" style="height: 60px">4</div>
+        <div class="box box5" style="height: 55px">5</div>
+    </div>
+    <h2>8. align-self: baseline</h2>
+    <div class="flex flex32">
+        <div class="box box1" style="height: 25px">1</div>
+        <div class="box box2" style="height: 40px">2</div>
+        <div class="box box3" style="height: 50px">3</div>
+        <div class="box box4" style="height: 60px">4</div>
+        <div class="box box5" style="height: 55px">5</div>
+    </div>
+</body>
+
+</html>

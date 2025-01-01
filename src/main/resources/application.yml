@@ -1,0 +1,27 @@
+spring:
+    #profiles:
+      #active: prod
+    thymeleaf:
+       cache: false 
+       prefix: classpath:/templates/
+       encoding: UTF-8
+       suffix: .html
+       mode: LEGACYHTML5
+
+    datasource:
+      url: jdbc:sqlite:database.sqlite?date_string_format=yyyy-MM-dd hh:mm:ss
+      driver-class-name: org.sqlite.JDBC
+      username: root
+      password: root123456
+    servlet:
+      multipart:
+        # 单个文件最大大小
+        max-file-size: 50MB
+        # 所有上传文件最大大小
+        max-request-size: 50MB
+
+server:
+  port: 8080
+logging:
+     config: classpath:logback.xml
+  

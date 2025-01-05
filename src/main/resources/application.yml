@@ -26,5 +26,5 @@ logging:
      config: classpath:logback.xml
 wx:
    appid: wx97d67597e297e046
-   secret: yFq8RGfm9g2Kwg++ibSmfg441MFfwVPM0Rl8fvnOJPgji6QZ8U6wEeSHVgzM+1N8/dUxQ8xLd9UEFIBpQReYC5A6s+qu1USHcaPBMez6W+4=
+   secret: 
   

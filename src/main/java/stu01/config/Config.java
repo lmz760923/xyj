@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.client.RestTemplate;
  
 @Configuration
 public class Config {
@@ -35,4 +36,8 @@ public class Config {
         return new JdbcTemplate(dataSource);
     }
     
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }

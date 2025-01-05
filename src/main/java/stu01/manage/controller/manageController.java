@@ -60,7 +60,8 @@ public class manageController {
 		    if (udo.auth(usr,password)) {
 		    request.getSession().setAttribute("user", "lmz");
 		    request.getSession().setAttribute("login", true);
-			return ResponseEntity.status(HttpStatus.OK).body(null);
+		    System.out.println(request.getParameter("code"));
+			return ResponseEntity.status(HttpStatus.OK).body("{\"openid\":\"xxx\",\"session_key\":\"sk\",\"unionid\":\"uid\",\"errorcode\":0}");
 			
 		    }
 		    else

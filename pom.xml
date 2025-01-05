@@ -44,19 +44,32 @@
   	</dependency>
 
   	<!-- 引入Spring Boot Web Services Starter -->
-        <dependency>
+   <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
-        </dependency>
+   </dependency>
  
         <!-- 引入Apache CXF Spring Boot Starter for JAX-WS -->
-        <dependency>
+   <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
             <version>3.3.4</version>
-        </dependency>
+   </dependency>
         
-  	
+  
+   <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+
+   </dependency>
+   
+   <dependency>
+    <groupId>com.github.ulisesbocchio</groupId>
+    <artifactId>jasypt-spring-boot-starter</artifactId>
+    <version>3.0.4</version>
+   </dependency>
+
+	
   </dependencies>
       	
   <build>

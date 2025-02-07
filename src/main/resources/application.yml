@@ -9,10 +9,11 @@ spring:
        mode: LEGACYHTML5
 
     datasource:
-      url: jdbc:sqlite:database.sqlite?date_string_format=yyyy-MM-dd hh:mm:ss
-      driver-class-name: org.sqlite.JDBC
-      username: root
-      password: root123456
+      data1:
+        jdbcUrl: jdbc:sqlite:database.sqlite?date_string_format=yyyy-MM-dd hh:mm:ss
+        driver-class-name: org.sqlite.JDBC
+        username: root
+        password: root123456
     servlet:
       multipart:
         # 单个文件最大大小
@@ -25,6 +26,15 @@ server:
 logging:
      config: classpath:logback.xml
 wx:
-   appid: wx97d67597e297e046
-   secret: 
-  
+   pay:
+#应用id（小程序id）
+      appId: wx97d67597e297e046
+      secret: 55881c8012ca76f9ee60dbc22968c837
+      merchantId: 1xxxxxxxxx
+      privateKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      merchantSerialNumber: 315DDXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      apiV3Key: XXXXXXXXXXXXXXXXXXXXXXXXXX
+      payNotifyUrl: https://xxx.xxxx.xxx.xxx/xx/xxxx/xxxx/openapi/wx/payNotify
+      refundNotifyUrl: https://xxx.xxx.xxx.xxx/xxxx/xxxx/xxxx/openapi/wx/refundNotify
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

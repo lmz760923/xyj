@@ -17,7 +17,7 @@ import stu01.model.cera;
 import stu01.model.ctotalRow;
 @Repository("userDao")
 public class UserDaoImpl {
-	@Resource(name="datasource")
+	@Resource(name="data1Source")
 	private DriverManagerDataSource ds;
 	@Resource(name="jdbcTemplate")
 	private JdbcTemplate jdbc;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stu01.mybatis.t_order_infoMapper">
+  <insert id="addOrder">
+  	insert into t_order_info(title,order_no) values(#{title},#{order_no})
+  </insert>
+  
+  <insert id="addOrder2">
+  	insert into t_order_info(title,order_no) values(#{entity.title},#{entity.order_no})
+  </insert>
+  
+  <select id="select" resultType="stu01.model.t_order_info">
+  	select title,order_no from t_order_info 
+  	<where>
+  	<if test="title !=null and title != ''">
+  		and title = #{title} and
+  	</if>
+  	<if test="order_no !=null and order_no != ''">
+  		and order_no = #{order_no} and
+  	</if>
+  	</where>
+  	
+  </select>
+  
+  <select id="select2" resultType="stu01.model.t_order_info">
+  	select title,order_no from t_order_info 
+  	<where>
+  	<if test="entity.title !=null and entity.title != ''">
+  		and title = #{entity.title} 
+  	</if>
+  	<if test="entity.order_no !=null and entity.order_no != ''">
+  		and order_no = #{entity.order_no} 
+  	</if>
+  	</where>
+  	
+  </select>
+    
+</mapper>

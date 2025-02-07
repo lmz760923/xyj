@@ -2,11 +2,19 @@ package stu01.wx.control;
 import stu01.wx.model.LoginForm;
 import stu01.wx.model.LoginResult;
 import stu01.utils.EncryptionUtil;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -21,13 +29,19 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import stu01.model.t_order_info;
+import stu01.mybatis.t_order_infoMapper;
 import stu01.service.UserDaoImpl;
 @RestController
 @RequestMapping("/wx")
 public class WXcontroller {
-	@Value("${wx.appid}")
+	@Resource
+	private t_order_infoMapper mapper;
+	
+	@Value("${wx.pay.appid}")
 	private String appid;
-	@Value("${wx.secret}")
+	@Value("${wx.pay.secret}")
 	private String secret;
 	@Autowired
 	private UserDaoImpl udo;
@@ -38,7 +52,7 @@ public class WXcontroller {
 		System.out.println("wxlogin:"+ request.getSession().getAttribute("wxlogin"));
 		Map<String, Object> map=null ;
 		ObjectMapper objectMapper = new ObjectMapper();
-		String url="https://api.weixin.qq.com/sns/jscode2session?appid="+appid+"&secret="+EncryptionUtil.decrypt(secret)+"&js_code="+loginform.getCode()+"&grant_type=authorization_code";
+		String url="https://api.weixin.qq.com/sns/jscode2session?appid="+appid+"&secret="+secret+"&js_code="+loginform.getCode()+"&grant_type=authorization_code";
 		System.out.println(url);
 		if (udo.auth(loginform.getUser(), loginform.getPassword())) {
 			request.getSession().setAttribute("wxlogin", true);
@@ -68,5 +82,34 @@ public class WXcontroller {
 		return ResponseEntity.status(HttpStatus.OK).body(rst);
 		
 	}
+	@PostMapping("/test")
+	public ResponseEntity<Integer>testmybatis(@RequestBody t_order_info entity){
+		Integer r=0;
+				
+		r=  mapper.addOrder2(entity);
+		  
+		 
+		 
+		return ResponseEntity.status(HttpStatus.OK).body(r);
+	}
+	
+	@PostMapping("/select")
+	public ResponseEntity<List<t_order_info>> select(@RequestBody t_order_info entity){
+			List<t_order_info> ret=mapper.select(entity.getTitle(), entity.getOrder_no());
+			return ResponseEntity.status(HttpStatus.OK).body(ret);
+		}
+	
+	@PostMapping("/select2")
+	public ResponseEntity<List<t_order_info>> select2(@RequestBody t_order_info entity){
+			List<t_order_info> ret=mapper.select2(entity);
+			return ResponseEntity.status(HttpStatus.OK).body(ret);
+		}
+	
+	@PostMapping("/select3")
+	public ResponseEntity<List<t_order_info>> select3(@RequestBody t_order_info entity){
+			List<t_order_info> ret=mapper.select2(entity);
+			return ResponseEntity.status(HttpStatus.OK).body(ret);
+		}
+	
 
 }

@@ -36,7 +36,7 @@ public class Config {
     }
 */
     @Bean(name = "data1Source")
-    @Primary//主数据源
+    //@Primary//主数据源
     //@ConfigurationProperties("spring.datasource.data1")
     DataSource dataSource1(){
     	
@@ -52,7 +52,7 @@ public class Config {
 
     
     @Bean //JdbcTemplate模板
-    @Autowired
+    //@Autowired
     JdbcTemplate jdbcTemplate(@Qualifier("data1Source") DataSource dataSource)
     {
         return new JdbcTemplate(dataSource);

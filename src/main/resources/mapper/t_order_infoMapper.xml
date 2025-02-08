@@ -15,10 +15,10 @@
   	select title,order_no from t_order_info 
   	<where>
   	<if test="title !=null and title != ''">
-  		and title = #{title} and
+  		and title = #{title} 
   	</if>
   	<if test="order_no !=null and order_no != ''">
-  		and order_no = #{order_no} and
+  		and order_no = #{order_no} 
   	</if>
   	</where>
   	

@@ -36,5 +36,4 @@ wx:
       apiV3Key: XXXXXXXXXXXXXXXXXXXXXXXXXX
       payNotifyUrl: https://xxx.xxxx.xxx.xxx/xx/xxxx/xxxx/openapi/wx/payNotify
       refundNotifyUrl: https://xxx.xxx.xxx.xxx/xxxx/xxxx/xxxx/openapi/wx/refundNotify
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
+
